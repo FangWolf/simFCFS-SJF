@@ -1,10 +1,12 @@
-public class Mission {
+public class Mission implements Comparable<Mission> {
     String name;
     int ArrivalTime;    //到达时间
     int ServiceTime;    //服务时间
     int StartingTime;   //开始时间
     int FinishingTime;  //完成时间
     int TurnAroundTime; //周转时间
+    double WeightTurnAroundTime; //带权周转时间
+    String ServiceStatus; //运行状态
 
     public String getName() {
         return name;
@@ -52,5 +54,29 @@ public class Mission {
 
     public void setTurnAroundTime(int turnAroundTime) {
         TurnAroundTime = turnAroundTime;
+    }
+
+    public double getWeightTurnAroundTime() {
+        return WeightTurnAroundTime;
+    }
+
+    public void setWeightTurnAroundTime(double weightTurnAroundTime) {
+        WeightTurnAroundTime = weightTurnAroundTime;
+    }
+
+    public String getServiceStatus() {
+        return ServiceStatus;
+    }
+
+    public void setServiceStatus(String serviceStatus) {
+        ServiceStatus = serviceStatus;
+    }
+
+    @Override
+    public int compareTo(Mission o) {
+        if (this.ArrivalTime >= o.getArrivalTime()) {
+            return 1;
+        }
+        return -1;
     }
 }
