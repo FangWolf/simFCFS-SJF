@@ -19,10 +19,12 @@ public class Main {
             mission.setName(ss[0]);
             mission.setArrivalTime(Integer.parseInt(ss[1]));
             mission.setServiceTime(Integer.parseInt(ss[2]));
+            mission.setStime(Integer.parseInt(ss[2]));
             mission.setServiceStatus("W");  //状态初始为W
             list.add(mission);
         }
         Collections.sort(list);//按到达时间排序
-        new Dispatch(list); //调度
+        new RR_Dispatch(list);//时间片轮转调度
+        //new Dispatch(list); //调度
     }
 }

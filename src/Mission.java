@@ -7,6 +7,7 @@ public class Mission implements Comparable<Mission> {
     int TurnAroundTime; //周转时间
     double WeightTurnAroundTime; //带权周转时间
     String ServiceStatus; //运行状态
+    int Stime;
 
     public String getName() {
         return name;
@@ -70,6 +71,14 @@ public class Mission implements Comparable<Mission> {
 
     public void setServiceStatus(String serviceStatus) {
         ServiceStatus = serviceStatus;
+    }
+
+    public int getStime() {
+        return Stime;
+    }
+
+    public void setStime(int stime) {
+        Stime = stime;
     }
 
     @Override
